@@ -22,14 +22,16 @@ function App() {
   }
 
   function pushItemToDB () {
-    push(shoppingListInDB, item)
+    push(shoppingListInDB, item);
+    setItem("");
   }
+
 
   return (
     <>
         <div className='container'>
           <img src="/src/assets/shoppingcart.png"></img>
-          <input type="text" id="input-field" placeholder='Bread' onChange={updateItem} ></input>
+          <input type="text" id="input-field" placeholder='Bread' onChange={updateItem} value={item}></input>
           <button onClick={pushItemToDB} id="add-button">Add to Cart</button>
         </div>
     </>
